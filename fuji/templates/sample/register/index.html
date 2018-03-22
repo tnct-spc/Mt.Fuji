@@ -1,0 +1,14 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Register</title>
+    <script src="{% static 'sample/register/script.js' %}"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>SAMPLE</h1>
+    <p>email: <input type="text" id="email" value="user@example.com"/></p>
+    <p>name: <input type="name" id="name" value="hoge"/></p>
+    <p>passoword: <input type="password" id="password" value="hogehoge"/></p>
+    <p><button id="button" type="button" onclick="register()">submit</button></p>
+</body>
