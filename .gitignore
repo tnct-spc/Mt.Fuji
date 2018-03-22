@@ -50,6 +50,11 @@ coverage.xml
 *.mo
 *.pot
 
+# db
+db.sqlite3
+
+# migration
+/migrations
 # Django stuff:
 *.log
 local_settings.py
@@ -99,3 +104,12 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# db
+db.sqlite3
+
+# migration
+migrations/
+migrations/*
+migrations/0001_initial.py
+migrations/__init__.py
