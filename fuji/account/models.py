@@ -11,7 +11,7 @@ class UserManager(UserManager):
         '''ユーザを作成'''
         # 値の入力をチェック 
         if not email or not name or not password:
-            raise ValueError('The given email must be set')
+            raise ValueError('The given arugments are not enough.')
 
         # メールアドレスのバリデーションチェック
         email = self.normalize_email(email)
@@ -43,6 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(
         _('name'),
         max_length=150,
+        blank=False,
         unique=False,
         validators=[UnicodeUsernameValidator()],
     )
