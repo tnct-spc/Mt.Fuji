@@ -1,0 +1,14 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Sample NFCTag Register</title>
+    <script src="{% static 'sample/nfctag_register/script.js' %}"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>SAMPLE</h1>
+    <p>email: <input type="text" id="email" value="user@example.com"/></p>
+    <p>password: <input type="password" id="password" value="hogehoge"/></p>
+    <p>IDm: <input type="text" id="idm" value="hogehoge"/></p>
+    <p><button id="button" type="button" onclick="nfctag_register()">submit</button></p>
+</body>

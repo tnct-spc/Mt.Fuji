@@ -8,3 +8,7 @@ def register(request):
 def login(request):
     '''サンプル用のログインページ'''
     return render(request, 'sample/login/index.html', {})    
+
+def nfc_register(request):
+    '''NFCタグ登録ページ'''
+    return render(request, 'sample/nfctag/index.html', {})

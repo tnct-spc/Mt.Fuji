@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'account',
-    'sample',
-    'corsheaders'
+    'nfctag',
+    'sample'
+    #'corsheaders'
 ]
 
 MIDDLEWARE = [
