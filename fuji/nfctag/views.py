@@ -40,6 +40,8 @@ def register(requests):
 
             # DBへ保存
             nfc_tag.save()
+
+            # 成功用レスポンスの返却
             return JsonResponse(OK)
 
     except:
@@ -49,3 +51,44 @@ def register(requests):
     return JsonResponse(NG)
 
 
+@csrf_exempt
+def check(requests):
+    '''NFCタグが正しいか確認する'''
+    try:
+        # リクエストの取得
+        data = json.loads(requests.body)
+
+        # 入力値が足りているかのチェック
+        if 'IDm' in data:
+            # もし入力値が足りていた場合
+
+            # NFCタグの検索
+            nfc_tag = NFCTag.objects.filter(
+                IDm__contains=data['IDm']
+            )
+
+            if len(nfc_tag) == 0:
+                # 見つからなかった場合
+                result = {
+                    'state' : 'not found'
+                }
+            else:
+                # 見つかった場合
+                # ユーザを探す
+                user = User.objects.filter(
+                    id__contains=nfc_tag[0].user_id
+                )
+
+                result = {
+                    'state' : 'hit',
+                    'name'  : user[0].name
+                }
+            
+            # 成功用レスポンスの返却
+            return JsonResponse(result)
+
+    except:
+        pass
+
+    # 失敗用レスポンスの返却
+    return JsonResponse(NG)

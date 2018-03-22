@@ -24,5 +24,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
     path('nfc_register/', views.nfc_register, name='nfc_register'),
+    path('nfc_check/', views.nfc_check, name='nfc_check'),
 ]
 

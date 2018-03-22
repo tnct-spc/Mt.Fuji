@@ -11,4 +11,8 @@ def login(request):
 
 def nfc_register(request):
     '''NFCタグ登録ページ'''
-    return render(request, 'sample/nfctag/index.html', {})
+    return render(request, 'sample/nfc_register/index.html', {})
+
+def nfc_check(request):
+    '''NFCタグ確認ページ'''
+    return render(request, 'sample/nfc_check/index.html', {})
